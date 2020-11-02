@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <title>Bookers2-debug</title>
+  <h3 style="color:white">Bookers2-debug</h3>
+
+
+    <meta name="csrf-param" content="authenticity_token">
+    <meta name="csrf-token" content="T0Mlfm6IssCMs1JVhQFJrA1O1wl2LuEfsVUZB0alSDMOZh3vm6sC4Wt0zt2OtFiCvFvd1SRofWrG9FHLMO5FSw==">
+
+    <link rel="stylesheet" media="all" href="/assets/application-945628f9f95377705c9108ec9a9704e6f6ffa0767c02e34400d75b5be64fc1b7.css" data-turbolinks-track="reload">
+    <script src="/assets/application-11e027fe501efa6924bd87aa8f6ef7436fd1539022b412029c4a223dec9664f8.js" data-turbolinks-track="reload"></script>
+
+    <title></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <!--<head>-->
+  <!--  <title>Bookers2-debug</title>-->
+  <!--  %= csrf_meta_tags %>-->
+  <!--  %= csp_meta_tag %>-->
+
+  <!--%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>-->
+  <!--%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>-->
+  <!--</head>-->
+
     <%= render 'layouts/header' %>
 
-    <div class="container">
-      <p id="notice"><%= notice %></p>
-
-    </div>
+  <body>
+    <!--<div class="container">-->
+    <!--  <p id="notice">%= notice %></p>-->
+    <!--</div>-->
 
     <% flash.each do |message_type, message| %>
       <%= message %>
@@ -23,8 +40,8 @@
 
   </body>
 
-    <%= yield %>
 
+    <%= yield %>
 
     <%= render 'layouts/footer' %>
 
