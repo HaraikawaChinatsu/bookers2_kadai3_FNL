@@ -1,25 +1,18 @@
 class FavoritesController < ApplicationController
 
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def create
-    @user = current_user
-    book = Book.find(params[:book_id])
-    return if book.favorites.find_by(user_id: book.user.id)
-    # この一行を追加
-    # favorite = @user.favorites.new(book_id: book.id)
-    favorite = Favorite.create(user_id: book.user.id, book_id: book.id)
+    @book = Book.find(params[:book_id])
+    favorite = @book.favorites.new(user_id: current_user.id)
     favorite.save
-    redirect_to books_path
+    redirect_to request.referer
   end
 
   def destroy
-    @user = current_user
-    book = Book.find(params[:book_id])
-    favorite = Favorite.create(user_id: book.user.id, book_id: book.id)
-    # favorite = current_user.favorites.find_by(book_id: book.id)
+    @book = Book.find(params[:book_id])
+    favorite = @book.favorites.find_by(user_id: current_user.id)
     favorite.destroy
-    redirect_to books_path(book)
+    redirect_to request.referer
   end
-
 end
